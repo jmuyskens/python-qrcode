@@ -42,6 +42,8 @@ For more control, use the ``QRCode`` class. For example::
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=10,
         border=4,
+	foreground_color="black",
+	background_color=(0,0,0,0)
     )
     qr.add_data('Some data')
     qr.make(fit=True)
@@ -71,6 +73,14 @@ is.
 
 The ``border`` parameter controls how many boxes thick the border should be
 (the default is 4, which is the minimum according to the specs).
+
+The ``foreground_color`` parameter is a string that specifies the color of the
+qr code image. Anything that would be valid in CSS should work here, whether
+rgb, hexadecimal, or common html color names.
+
+The ``background_color`` parameter is a tuple that specifies the background
+color of the qr code image in RGBA format. I know it's confusing, but we might
+want to make the background transparent.
 
 Other image factories
 =====================
